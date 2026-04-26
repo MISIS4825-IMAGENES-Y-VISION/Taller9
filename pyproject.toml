@@ -2,12 +2,34 @@
 name = "taller9"
 version = "0.0.1"
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "kagglehub>=1.0.0",
+    "matplotlib>=3.10.9",
+    "pandas>=3.0.2",
+    "pillow>=12.2.0",
+    "torch>=2.11.0",
+    "torchvision>=0.26.0",
+    "ultralytics>=8.4.41",
+]
 
 [dependency-groups]
 dev = [
     "ipykernel>=7.2.0",
     "ipywidgets>=8.1.8",
+    "modal>=1.4.2",
     "ruff>=0.15.12",
     "ty>=0.0.32",
 ]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cpu" },
+]
+torchvision = [
+    { index = "pytorch-cpu" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
